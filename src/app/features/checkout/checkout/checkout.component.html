@@ -1,0 +1,26 @@
+<div class="checkout-container">
+  <h2>Оформлення замовлення</h2>
+
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <div *ngFor="let item of cartItems">
+      <div class="cart-item">
+        <p>{{ item.name }} x{{ item.quantity }} - {{ item.price | currency }}</p>
+      </div>
+    </div>
+    <div class="total-price">
+      <p>Разом: {{ totalPrice | currency }}</p>
+    </div>
+
+    <h4>Доставка:</h4>
+    <app-shipping-form/>
+
+    <label for="email">Ваша електронна пошта:</label>
+    <input id="email" type="email" [(ngModel)]="email" placeholder="example@example.com" required />
+
+    <button (click)="onCheckout()">Підтвердити замовлення</button>
+  </div>
+
+  <ng-template #emptyCart>
+    <p>Ваш кошик порожній.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,30 @@
+<section class="container content">
+  <h2>Відгуки</h2>
+
+  <owl-carousel-o [options]="customOptions" *ngIf="!isLoading && !errorMessage">
+    <ng-container
+      *ngFor="let review of reviews; trackBy: trackById; let i = index"
+    >
+      <ng-template carouselSlide [id]="trackById(i, review.id)">
+        <div class="review-card box">
+          <div class="review-header">
+            <img
+              [src]="review.photo"
+              alt="Reviewer's Photo"
+              class="review-photo"
+            />
+            <div *ngIf="review.rating">
+              <div
+                class="review-rating"
+                [innerHTML]="getRatingStars(review.rating)"
+              ></div>
+            </div>
+
+            <h3 class="reviewer-name">{{ review.name }}</h3>
+          </div>
+          <p class="review-text">{{ review.text }}</p>
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</section>

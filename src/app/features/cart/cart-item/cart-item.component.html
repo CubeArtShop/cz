@@ -1,0 +1,9 @@
+<div class="cart-item">
+  <img [src]="item.imageUrl" [alt]="item.name" class="cart-item-image" />
+  <div class="cart-item-details">
+    <h3>{{ item.name }}</h3>
+    <p>Кількість: {{ item.quantity }}</p>
+    <p>Ціна: {{ item.price | currencyFormat:'CZK' }}</p>
+  </div>
+  <button (click)="removeItem()">Видалити</button>
+</div>

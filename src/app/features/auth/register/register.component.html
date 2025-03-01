@@ -1,0 +1,26 @@
+<div class="register-container">
+  <h2>Реєстрація</h2>
+
+  <form (ngSubmit)="register()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Пароль</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required />
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Підтвердження паролю</label>
+      <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required />
+    </div>
+
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+    <button type="submit">Зареєструватися!</button>
+  </form>
+
+  <button (click)="registerWithGoogle()">Зареєструватися через Google</button>
+</div>

@@ -1,0 +1,43 @@
+::ng-deep .owl-theme .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none; /* Щоб стрілки не блокували кліки по слайдам */
+}
+
+/* Окремі стилі для кнопок */
+::ng-deep .owl-theme .owl-nav [class*=owl-] {
+  pointer-events: auto; /* Включає можливість кліку */
+  color: #00ff00;
+  font-size: 24px;
+  padding: 10px;
+  background: #2b2b2b;
+  border: 3px solid #808080;
+  box-shadow: 3px 3px 0px #404040;
+  font-family: "Press Start 2P", cursive;
+  transition: all 0.2s ease;
+}
+
+/* Ліва кнопка */
+::ng-deep .owl-theme .owl-nav .owl-prev {
+  position: absolute;
+  left: -60px; /* Виставляємо за межі каруселі */
+}
+
+/* Права кнопка */
+::ng-deep .owl-theme .owl-nav .owl-next {
+  position: absolute;
+  right: -60px; /* Виставляємо за межі каруселі */
+}
+
+/* Ховер-ефект */
+::ng-deep .owl-theme .owl-nav [class*=owl-]:hover {
+  background: #3b3b3b;
+  border-color: #ffffff;
+  box-shadow: 3px 3px 0px #fff;
+  transform: scale(1.1);
+}
+

@@ -1,0 +1,13 @@
+<div class="orders-container">
+  <h2>Мої замовлення</h2>
+  <ul>
+    <li *ngFor="let order of orders">
+      <div class="order-item">
+        <h3>Замовлення № {{ order.id }}</h3>
+        <p>Дата створення: {{ order.createdAt | date: 'short' }}</p>
+        <p>Статус: {{ order.status }}</p>
+        <button (click)="viewOrderDetails(order.id)">Переглянути деталі</button>
+      </div>
+    </li>
+  </ul>
+</div>

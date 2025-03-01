@@ -1,0 +1,39 @@
+<section class="container content">
+  <h2>Залишити відгук</h2>
+
+  <form [formGroup]="reviewForm" class="box reviewForm" (ngSubmit)="submitReview()">
+    <label>Ваше ім'я:</label>
+    <input type="text" formControlName="name" placeholder="Ваше ім'я" required />
+    <div *ngIf="reviewForm.controls['name'].invalid && reviewForm.controls['name'].touched">
+      Ім'я обов'язкове.
+    </div>
+
+    <label>Оцінка:</label>
+    <div class="rating">
+      <span *ngFor="let star of [1, 2, 3, 4, 5]" (click)="setRating(star)">
+        <span>
+          {{ star <= reviewForm.value.rating ? '❤️' : '🖤' }}
+        </span>
+      </span>
+      <span class="rating-text">{{ reviewForm.value.rating }} з 5</span>
+    </div>
+
+    <label for="comment">Ваш відгук:</label>
+    <textarea id="comment" formControlName="comment" rows="4" required></textarea>
+    <div *ngIf="reviewForm.controls['comment'].invalid && reviewForm.controls['comment'].touched">
+      Мінімум 10 символів.
+    </div>
+
+    <label for="photo">Фото продукту:</label>
+    <input type="file" id="photo" (change)="onFileSelected($event)" accept="image/*" />
+
+    <div class="preview" *ngIf="photoPreview">
+      <p>Попередній перегляд:</p>
+      <img [src]="photoPreview" alt="Завантажене фото" />
+    </div>
+
+    <button class="button-primary" type="submit" [disabled]="reviewForm.invalid || isSubmitting">
+      Додати відгук
+    </button>
+  </form>
+</section>

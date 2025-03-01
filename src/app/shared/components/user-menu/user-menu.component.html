@@ -1,0 +1,9 @@
+<div class="flex gap-3">
+  @if(authService.currentUserSig()) {
+    <a (click)="authService.logout()">logout</a>
+    <a routerLink="me">cabinet</a>
+  } @else {
+    <a routerLink="auth/login">login</a>
+    <a routerLink="auth/register">register</a>
+  }
+</div>

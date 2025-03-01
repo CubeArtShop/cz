@@ -1,0 +1,25 @@
+<div class="catalog">
+  <h2>Каталог товарів</h2>
+
+  <div *ngIf="isLoading">Завантаження...</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <!-- Форма для додавання товару -->
+  <div class="product-form">
+    <h3>Додати товар</h3>
+    <input type="text" [(ngModel)]="newProduct.name" placeholder="Назва" required />
+    <input type="text" [(ngModel)]="newProduct.description" placeholder="Опис" />
+    <input type="text" [(ngModel)]="newProduct.category" placeholder="Категорія" required />
+    <input type="number" [(ngModel)]="newProduct.price" placeholder="Ціна" required />
+    <input type="number" [(ngModel)]="newProduct.stock" placeholder="Кількість на складі" required />
+    <input type="text" [(ngModel)]="newProduct.imageUrl" placeholder="URL зображення" required />
+    <button (click)="addProduct()">Додати</button>
+  </div>
+
+  <!-- Відображення товарів -->
+  <div class="catalog__grid" *ngIf="!isLoading && !errorMessage">
+    <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+  </div>
+
+  <button routerLink="/cart">cart</button>
+</div>

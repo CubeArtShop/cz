@@ -1,0 +1,22 @@
+<div class="cart-container">
+  <h2>Кошик</h2>
+
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <app-cart-item
+      *ngFor="let item of cartItems"
+      [item]="item"
+      (remove)="removeItem(item.id)"
+    ></app-cart-item>
+
+    <div class="cart-summary">
+      <p>Загальна сума: {{ totalPrice | currency:'UAH' }}</p>
+      <button (click)="clearCart()">Очистити кошик</button>
+    </div>
+
+    <button routerLink="/checkout">checkout</button>
+  </div>
+
+  <ng-template #emptyCart>
+    <p>Ваш кошик порожній</p>
+  </ng-template>
+</div>

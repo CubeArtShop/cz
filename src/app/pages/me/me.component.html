@@ -1,0 +1,38 @@
+<div *ngIf="isLoading" class="loading-spinner">
+  Завантаження...
+</div>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="user">
+  <h2>Профіль користувача</h2>
+  <p><strong>Ім'я:</strong> {{ user.name }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <p><strong>Дата створення акаунту:</strong> {{ user.createdAt | date }}</p>
+  <p><strong>Останній вхід:</strong> {{ user.updatedAt | date }}</p>
+
+  <h3>Адреса доставки</h3>
+  <div *ngIf="user.address">
+    <p><strong>Ім'я отримувача:</strong> {{ user.address.fullName }}</p>
+    <p><strong>Телефон:</strong> {{ user.address.phone }}</p>
+    <p><strong>Адреса:</strong> {{ user.address.address }}, {{ user.address.city }}</p>
+    <p><strong>Поштовий код:</strong> {{ user.address.postalCode }}</p>
+    <p><strong>Країна:</strong> {{ user.address.country }}</p>
+  </div>
+
+  <h3>Ваші замовлення</h3>
+  <div *ngIf="orders.length > 0; else noOrders">
+    <ul>
+      <li *ngFor="let order of orders">
+        <p><strong>Статус:</strong> {{ order.status }}</p>
+        <p><strong>Сума:</strong> {{ order.totalAmount | currency }}</p>
+        <p><strong>Дата створення:</strong> {{ order.createdAt | date }}</p>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noOrders>
+    <p>У вас ще немає замовлень.</p>
+  </ng-template>
+</div>

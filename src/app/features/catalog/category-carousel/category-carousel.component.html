@@ -1,0 +1,14 @@
+<h2>{{title | translate}}</h2>
+
+<!-- todo зробити скелетон завантаження -->
+<div *ngIf="isLoading">Loading products...</div>
+
+<owl-carousel-o [options]="customOptions" *ngIf="!isLoading && !errorMessage">
+  <ng-container *ngFor="let product of products; trackBy: trackById">
+    <ng-template carouselSlide [id]="product.id">
+      <app-product-card [product]="product"></app-product-card>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>
+
+<div *ngIf="errorMessage">{{ errorMessage }}</div>

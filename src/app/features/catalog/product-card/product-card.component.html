@@ -1,0 +1,15 @@
+<div class="product-card">
+  <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image" />
+  <div class="product-details">
+    <h3 class="product-title">{{ product.name }}</h3>
+    <div class="flex flex-row items-center justify-between gap-2">
+      <div class="product-price">{{ product.price | currencyFormat: 'CZK' }}</div>
+      <span>120sm x 120sm</span>
+      <button><img src="./assets/icons/heart.svg" alt="add to favorites"> </button>
+    </div>
+    <a class="button-primary" (click)="addToCart()">
+      <span>{{'BUTTONS.BUY_NOW' | translate}}</span>
+      <img src="./assets/icons/cart.svg" alt="by now">
+    </a>
+  </div>
+</div>
