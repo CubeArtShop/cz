@@ -1,0 +1,41 @@
+:root {
+  // Colors
+  --primary-color: #6200ea;
+  --primary-hover: #6200ea99;
+
+  --secondary-color: #03dac6;
+  --secondary-hover: #03dac699;
+
+  --accent-color: #a7db17;
+  --accent-hover: #a7db1799;
+
+  --bg-color: #f5f5f5;
+  --text-color-headings: #242424;
+  --text-color-headings-light: #fff;
+  --text-color: #242424;
+
+  // TypographyX
+  --font-family-headings: "Press Start 2P", "Courier New", monospace; // Заголовки
+  --font-family-base: "Trebuchet MS", Arial, sans-serif; // Для основного тексту
+
+  // Focus and shadows
+  --box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  --focus-shadow-color: rgba(--primary-color, 0.25);
+
+  // Media queries
+  --media-desktop: 1280px;
+  --media-laptop: 1025px;
+  --media-netbook: 960px;
+  --media-tablet: 832px;
+  --media-tablet-small: 672px;
+  --media-mobile: 480px;
+  --media-mobile-small: 336px;
+}
+
+$media-desktop: 1280px;
+$media-laptop: 1025px;
+$media-netbook: 960px;
+$media-tablet: 832px;
+$media-tablet-small: 672px;
+$media-mobile: 480px;
+$media-mobile-small: 336px;

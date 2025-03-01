@@ -1,0 +1,112 @@
+@use 'variables'as *;
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  // padding: 0 16px;
+  padding-left: 12px;
+    padding-right: 12px;
+
+  @media (max-width: $media-desktop) {
+    max-width: 1024px;
+  }
+
+  @media (max-width: $media-laptop) {
+    max-width: 960px;
+  }
+
+  @media (max-width: $media-netbook) {
+    max-width: 832px;
+  }
+
+  @media (max-width: $media-tablet) {
+    max-width: 672px;
+  }
+
+  @media (max-width: $media-tablet-small) {
+    max-width: 480px;
+  }
+
+  @media (max-width: $media-mobile) {
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // grid-auto-flow: column;
+  justify-items: center;
+
+  &.reverse {
+    // grid-auto-flow: column-reverse;
+    direction: rtl;
+  }
+
+  @media (max-width: $media-netbook) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.box {
+  padding: 12px;
+  margin: 4px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  font-size: 14px;
+}
+
+figure {
+  width: fit-content;
+  position: relative;
+
+  @media (max-width: $media-netbook) {
+    width: 100%;
+  }
+
+  figcaption {
+    margin: 12px 4px;
+  }
+
+  .arrow {
+    width: 120px;
+    position: absolute;
+    top: 100%;
+
+    &.left {
+      right: 100%;
+    }
+
+    &.right {
+      left: 100%;
+    }
+
+    @media (max-width: $media-netbook) {
+      width: 24px;
+      position: relative;
+      top: auto;
+
+      &.left,
+      &.right {
+        left: auto;
+        right: auto;
+      }
+    }
+  }
+}
+
+section {
+  &.content {
+    padding-top: 120px;
+    padding-bottom: 40px;
+
+    @media (max-width: $media-netbook) {
+      padding-top: 80px;
+      padding-bottom: 20px;
+    }
+  }
+}

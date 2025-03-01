@@ -1,0 +1,19 @@
+{
+  "HOME": {
+    "TITLE": "Welcome to our shop!",
+    "DESCRIPTION": "Find the best products here."
+  },
+  "BUTTONS": {
+    "ADD_TO_CART": "Add to Cart",
+    "BUY_NOW": "Buy Now"
+  },
+  "CATEGORIES": {
+    "VANILLA": "Vanilla",
+    "MINECRAFT_ART": "Minecraft Art",
+    "MOBS": "Mobs",
+    "NATURE": "Nature",
+    "SIGNBOARDS": "Signboards",
+    "MEMES": "Memes",
+    "OTHER": "Other"
+  }
+}

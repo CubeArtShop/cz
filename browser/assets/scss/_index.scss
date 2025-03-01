@@ -1,0 +1,46 @@
+@use "variables" as *;
+@use "wrappers" as *;
+@use "mixins" as *;
+@use "typography" as *;
+@use "buttons" as *;
+@use "forms" as *;
+@use "tailwind" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Стиль для скролу */
+::-webkit-scrollbar {
+  width: 16px; /* Ширина скролбару */
+}
+
+::-webkit-scrollbar-track {
+  background: #4e4e4e; /* Колір фону для доріжки скролу */
+  border-radius: 8px; /* Округлення для доріжки */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b8b8b; /* Колір скроллбару (палець) */
+  border-radius: 8px; /* Округлення для пальця */
+  border: 4px solid #4e4e4e; /* Стиль кордону */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* Тінь для скроллбару */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6e6e6e; /* Яскравіший колір для пальця при наведенні */
+}
+
+/* Для старих браузерів */
+scrollbar {
+  width: 16px;
+  height: 16px;
+}
