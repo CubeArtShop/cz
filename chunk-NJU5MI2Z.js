@@ -1,0 +1,1 @@
+import{Fb as m,ab as o,tb as n,ub as a}from"./chunk-CXCBK7OS.js";var p=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=o({type:t,selectors:[["app-about-me"]],decls:2,vars:0,template:function(e,i){e&1&&(n(0,"p"),m(1,"about-me works!"),a())},encapsulation:2})};export{p as AboutMeComponent};
