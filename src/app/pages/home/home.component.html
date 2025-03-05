@@ -1,30 +1,4 @@
-<section>
-  <div class="hero dark">
-    <video
-      class="background-video"
-      autoplay
-      muted
-      playsinline
-      webkit-playsinline
-      disableRemotePlayback
-      [attr.poster]="'/assets/img/hero-bg.jpg'"
-      (loadeddata)="onVideoLoaded()"
-      [ngClass]="{ loaded: videoLoaded }"
-    >
-      <source src="./assets/videos/hiro.mp4" type="video/mp4" />
-    </video>
 
-    <div class="container flex-center flex-col">
-      <!-- <h2>Картини від <span>Cube Art</span></h2> -->
-      <p>
-        Онови свій простір зі <span>стильними картинками</span>, що створюють
-        <span>ідеальну атмосферу </span>!
-      </p>
-
-      <button class="button-primary">Оберіть свою картину</button>
-    </div>
-  </div>
-</section>
 
 <div class="container">
   <section class="py-10">

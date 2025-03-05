@@ -1,7 +1,29 @@
 <div class="relative">
-  <div class="flex-center pre-header">
-    <h1>Cube Art</h1>
-  </div>
+  <section>
+    <div class="hero dark">
+      <video
+  class="background-video loaded"
+  [muted]="true"
+  autoplay
+  loop
+  playsinline
+  webkit-playsinline
+  disableRemotePlayback
+  preload="auto"
+  [attr.poster]="videoLoaded ? '' : './assets/img/hero-bg.jpg'"
+  (loadeddata)="onVideoLoaded()"
+>
+  <source src="./assets/videos/hiro.mp4" type="video/mp4" />
+</video>
+
+
+      <div class="container flex-center flex-col">
+        <h2>Картини від <span>Cube Art</span></h2>
+
+        <button class="button-primary">Оберіть свою картину</button>
+      </div>
+    </div>
+  </section>
 
   <app-header />
 

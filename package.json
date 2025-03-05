@@ -9,7 +9,8 @@
     "test": "ng test",
     "serve:ssr:cz": "node dist/server/server.mjs",
     "build:prod": "ng build --configuration=production",
-    "deploy:gh":  "npx angular-cli-ghpages --dir=dist/"
+    "deploy:gh":  "npx angular-cli-ghpages --dir=dist/browser/",
+    "update:gh": "npm run build && npm run deploy:gh"
   },
   "private": true,
   "dependencies": {

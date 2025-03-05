@@ -37,24 +37,31 @@ export class CategoryCarouselComponent {
       0: {
         items: 1,
         nav: false,
+        touchDrag: true,
       },
       400: {
         items: 2,
         nav: false,
+        touchDrag: true,
       },
       740: {
         items: 3,
         nav: false,
+        touchDrag: true,
       },
       940: {
         items: 4,
-        nav: false,
+        nav: true,
         mouseDrag: true,
         touchDrag: true,
       },
       1024: {
+        items: 5,
+        nav: true,
+      },
+      1524: {
         items: 6,
-        nav: false,
+        nav: true,
       },
     },
     nav: true,

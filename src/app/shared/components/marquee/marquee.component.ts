@@ -12,7 +12,15 @@ import { RouterModule } from '@angular/router';
 export class MarqueeComponent {
   @Input() messages = [
     {
-      text: 'test splash!',
+      text: 'Красиві картини!',
+      route: '',
+    },
+    {
+      text: 'атмосферно!',
+      route: '',
+    },
+    {
+      text: 'pssss!',
       route: '',
     },
   ];
